@@ -56,6 +56,8 @@ docker exec -it postgres bash
 psql -U POSTGRES_USER
 ```
 
-You cun uncomment lines in Dockerfile, if you needded having postgis on database
-#RUN apt update \
-#    && apt-get install postgis postgresql-11-postgis-scripts -y
+##### You cun uncomment lines in Dockerfile, if you needded having postgis on database
+```
+RUN apt update \
+    && apt-get install postgis postgresql-11-postgis-scripts -y
+```
