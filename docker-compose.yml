@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  PostgreSQL:
+    container_name: copy-postgres
+    image: db-postgres
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin #user owner database 
+      - POSTGRES_PASSWORD=jw8s0F4 #Password of owner user database
+      - RM_HOST=192.168.1.10 #This is IP or FQDN of remote host for dump
+      - RM_PORT=5432 #Port of remote server
+      - DB_NAME=database #Name database for dump and create in container
